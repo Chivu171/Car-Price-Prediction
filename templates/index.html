@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Prediction</title>
+     <!-- Bootsrap css file -->
+     <link rel= "stylesheet" href = "../static/css/bootstrap.min.css">
+
+     <link rel="stylesheet" href="../static/css/all.min.css">  <!-- <--- thêm dòng này -->
+
+     <!-- font awesome icons -->
+    <link rel = "stylesheet" href = "../static/css/custom.css">
+</head>
+<body>
+    <!-----HEADER AREA-->
+    <header class="header_area">
+        <h1 class = "header-text"> Car Price Prediction </h1>
+    </header>
+    <!-----END HEADER AREA-->
+
+    <!-----MAIN AREA-->
+    <main class="site-main">
+        <section class="site-input">
+            <div class="row">
+                <div class="col-lg-6 col-md-12 site-title">
+                    <div class="flex items-center space-x-2 mb-4"> 
+                        <h3 style='display: inline-block;' class="text-lg font-medium text-gray-700 whitespace-nowrap">Name:</h3>
+                        <input type="text" id="carName" name="carName" placeholder="Type car's name" required
+                        class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                    </div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <h3 style='display: inline-block' class="text-lg font-medium text-gray-700 whitespace-nowrap">Owner:</h3>
+                        <select name="ownerColumn" id="owner_Column"
+                                class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" >
+                            <option   value="" selected disabled hidden>SELECT OWNER</option>
+                            <option>First Owner</option>
+                            <option>Second Owner</option>
+                            <option>Third Owner</option>
+                            <option>Fourth & Above Owner</option>
+                            <option>Test Drive Car</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center space-x-2 mb-4"> 
+                        <h3 style ='display: inline-block' class="text-lg font-medium text-gray-700 whitespace-nowrap">km_driven:</h3>
+                        <input class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" type="number" id="km_driven" name="km_driven" placeholder="Type km driven" required>
+                    </div>
+                    <div class="flex items-center space-x-2 mb-4"> 
+                        <h3 style ='display: inline-block' class="text-lg font-medium text-gray-700 whitespace-nowrap">Fuel:</h3>
+                        <select name="fuel" id="fuel"
+                                class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="" selected disabled hidden>SELECT FUEL</option>
+                            <option>Petrol</option>
+                            <option>Diesel</option>
+                            <option>CNG</option>
+                            <option>LPG</option>
+                            <option>Electric</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 site-title">
+                    <div class="flex items-center space-x-2 mb-4"> 
+                        <h3 style ='display: inline-block' class="text-lg font-medium text-gray-700 whitespace-nowrap">Seller Type:</h3>
+                        <select name="seller_type" id="seller_type"
+                                class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="" selected disabled hidden>SELECT SELLER TYPE</option>
+                            <option>Individual</option>
+                            <option>Dealer</option>
+                            <option>Trustmark Dealer</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center space-x-2 mb-4"> 
+                        <h3 style ='display: inline-block' class="text-lg font-medium text-gray-700 whitespace-nowrap"> Year:</h3>
+                        <input class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500" type="text" id="year" name="year" placeholder="Type car's year" required>
+                    </div>
+                    <div class="flex items-center space-x-2 mb-4"> 
+                        <h3 style ='display: inline-block' class="text-lg font-medium text-gray-700 whitespace-nowrap">Transmission:</h3>
+                        <select name="transmission" id="transmission"
+                                class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500">
+                            <option value="" selected disabled hidden>SELECT TRANSMISSION</option>
+                            <option>Manual</option>
+                            <option>Automatic</option>
+                        </select>
+                    </div>
+                   
+                </div>
+            </div>
+        </section>
+        <!-- Sau phần form (cuối <section class="site-input">), trước </section> -->
+<div class="row mt-3">
+    <div class="col-12 text-center">
+      <!-- Nút Predict -->
+      <button id="btnPredict" class="btn btn-primary px-4">
+        Predict
+      </button>
+    </div>
+  </div>
+  
+  <!-- Nơi hiển thị kết quả -->
+  <div class="row mt-4">
+    <div class="col-12">
+      <div id="predictionResult" class="alert alert-info text-center" style="display:none;">
+        <!-- Dòng này sẽ chứa giá trị dự đoán -->
+        Your predicted price will appear here.
+      </div>
+    </div>
+  </div>
+
+    </main>
+    <!----- END MAIN AREA-->
+    <script src="{{ url_for('static', filename='js/predict.js') }}"></script>
+</body>
+</html>

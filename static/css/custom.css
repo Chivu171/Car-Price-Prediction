@@ -1,0 +1,108 @@
+/* custom.css */
+
+/* Toàn cục: font-chữ và background nhẹ */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #343a40;
+  }
+  
+  /* Căn form nhập */
+  .site-input {
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin: 1rem;
+  }
+  
+  /* Flex container cho mỗi row field (giữ nguyên selector cũ) */
+  .site-input div.flex.items-center.mb-4 {
+    display: flex !important;
+    align-items: center !important;
+    margin-bottom: 1.25rem !important;
+  }
+  
+  /* Label (<h3>) */
+  .site-input div.flex.items-center.mb-4 h3 {
+    flex: 0 0 140px !important;        /* tăng rộng label */
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    color: #495057;
+    text-transform: capitalize;
+  }
+  
+  /* Input / Select */
+  .site-input div.flex.items-center.mb-4 .flex-grow {
+    flex: 1 1 auto !important;
+    min-width: 0;
+    padding: 0.5rem 0.75rem !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 0.375rem !important;
+    transition: border-color 0.2s ease;
+  }
+  
+  /* Khi focus */
+  .site-input div.flex.items-center.mb-4 .flex-grow:focus {
+    outline: none;
+    border-color: #80bdff !important;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25);
+  }
+  
+  /* Hover trên select / input */
+  .site-input div.flex.items-center.mb-4 .flex-grow:hover {
+    border-color: #adb5bd !important;
+  }
+  
+  /* Header area */
+  .header_area {
+    background-color: #343a40;
+    padding: 1rem;
+    text-align: center;
+  }
+  .header_area .header-text {
+    margin: 0;
+    color: #ffffff;
+    font-size: 1.75rem;
+  }
+  
+  /* Mobile: stack label lên trên */
+  @media (max-width: 767.98px) {
+    .site-input div.flex.items-center.mb-4 {
+      flex-direction: column !important;
+      align-items: stretch !important;
+    }
+    .site-input div.flex.items-center.mb-4 h3 {
+      flex: none !important;
+      width: auto !important;
+      margin-bottom: .5rem !important;
+    }
+  }
+  
+  /* Chia hai cột rõ hơn */
+  @media (min-width: 992px) {
+    /* cách ra giữa 2 cột */
+    .site-input .row > .col-lg-6 {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+  /* Giảm font-size chung cho form */
+.site-input {
+    font-size: 0.9rem;       /* tỉ lệ ~90% so với mặc định */
+  }
+  
+  /* Nếu bạn muốn tinh chỉnh riêng label (h3) và input/select */
+  .site-input div.flex.items-center.mb-4 h3 {
+    font-size: 1rem;         /* label nhỏ hơn (mặc định ~1.25rem) */
+  }
+  
+  .site-input div.flex.items-center.mb-4 .flex-grow {
+    font-size: 0.9rem;       /* input/select chữ nhỏ hơn */
+  }
+  
+  /* Cũng giảm font-size header nếu cần */
+  .header_area .header-text {
+    font-size: 1.5rem;       /* mặc định tôi đặt 1.75rem, giờ nhỏ lại */
+  }
